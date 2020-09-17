@@ -147,6 +147,130 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/17/%E5%BE%AE%E5%85%89C-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZHA">
+      <meta itemprop="description" content="学习为国，学习为己">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZHA-idea">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/17/%E5%BE%AE%E5%85%89C-02/" class="post-title-link" itemprop="url">微光C_02</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-09-17 19:53:28 / 修改时间：19:53:59" itemprop="dateCreated datePublished" datetime="2020-09-17T19:53:28+08:00">2020-09-17</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/09/17/%E5%BE%AE%E5%85%89C-02/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/17/%E5%BE%AE%E5%85%89C-02/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="C-02：Pointer-？Array"><a href="#C-02：Pointer-？Array" class="headerlink" title="C-02：Pointer ？Array"></a>C-02：Pointer ？Array</h1><h3 id="废话少说，上代码："><a href="#废话少说，上代码：" class="headerlink" title="废话少说，上代码："></a>废话少说，上代码：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span>&#123;</span></span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">char</span> sex[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">int</span> ID;</span><br><span class="line">&#125;;                               <span class="comment">//规定结构体格式</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span> *<span class="title">p</span>;</span>              <span class="comment">//定义一个结构体指针</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">INPUT</span><span class="params">(<span class="keyword">int</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">OUTPUT</span><span class="params">(<span class="keyword">int</span>)</span></span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> max=<span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;输入总共几个学生：\n&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;max);</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">student</span> <span class="title">info</span>[<span class="title">max</span>];</span><span class="comment">//定义结构体数组“info”</span></span><br><span class="line">    p=&amp;info[<span class="number">0</span>];              <span class="comment">//令p指向info[0]</span></span><br><span class="line">    INPUT(max);</span><br><span class="line">    p=&amp;info[<span class="number">0</span>];              <span class="comment">//重新让p指向info结构体数组的第一个结构体</span></span><br><span class="line">    OUTPUT(max);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;sizeof(info)=%ld\n&quot;</span>,<span class="keyword">sizeof</span>(info));<span class="comment">//输出info的size</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">INPUT</span><span class="params">(max)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;max;i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;第%d/%d个学生:&quot;</span>,i+<span class="number">1</span>,max);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请依次输入姓名，性别，年龄和学号\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s %s %d %d&quot;</span>,(*p).name,(*p).sex,&amp;(*p).age,&amp;(*p).ID);</span><br><span class="line">        p++;                  <span class="comment">//用指针遍历，输入共“max”个结构体</span></span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">OUTPUT</span><span class="params">(max)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;max;i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;第%d/%d名学生的信息如下：\n&quot;</span>,i+<span class="number">1</span>,max);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s %s %d %d\n&quot;</span>,p-&gt;name,p-&gt;sex,(*p).age,(*p).ID);<span class="comment">//发现-&gt;和（*p）作用一样</span></span><br><span class="line">        p++;                  <span class="comment">//指针遍历输出（发现p-&gt;和(*p).作用一样）</span></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h3 id="我对指针、数组的理解"><a href="#我对指针、数组的理解" class="headerlink" title="我对指针、数组的理解"></a>我对指针、数组的理解</h3><ul>
+<li>指针就是地址，不同类型的指针有不同的特性，比如int类型的指针在+1的时候指向下一个int，相当于地址+4个字节，而本题中struct类型的指针每次+1都会指向下一个结构体——由此观之指针的加法并非简单的地址加法，而是由类型决定的。</li>
+<li>数组是一堆一样类型的变量的集合，数组也分类型，int类型的数组每个元素都是整数，本题中struct类型的数组每个元素都是结构体。</li>
+</ul>
+</li>
+<li><h3 id="我对函数参数传递的理解"><a href="#我对函数参数传递的理解" class="headerlink" title="我对函数参数传递的理解"></a>我对函数参数传递的理解</h3><ul>
+<li><p>函数可以输入一个或多个值，输出一个或零个值。函数不好的地方在于它看不到其他函数里面的东西。但这使得它看不受其他函数里面东西的干扰，能专心做好自己的事。</p>
+<p>想要向函数中传参，就要用到指针，把内存中的数字运进函数。可以说指针能够贯穿整个代码，串联起各个函数。代码的“模块化”能够让今后对代码的修改更加简便,还能让思路清晰，便于理解。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="sizeof-struct的思考"><a href="#sizeof-struct的思考" class="headerlink" title="sizeof struct的思考"></a>sizeof struct的思考</h3><ul>
+<li>当max=2时，这时总共8个变量</li>
+</ul>
+<p>![截屏2020-09-16 下午9.55.47](/Users/boxizhou/Desktop/截屏2020-09-16 下午9.55.47.png)</p>
+<p>sizeof是56</p>
+<ul>
+<li>Max=3，这时总共12个变量</li>
+</ul>
+<p>![截屏2020-09-16 下午9.56.34](/Users/boxizhou/Desktop/截屏2020-09-16 下午9.56.34.png)</p>
+<p>sizeof=84</p>
+<ul>
+<li>Max=5，20个变量</li>
+</ul>
+<p>![截屏2020-09-16 下午9.57.00](/Users/boxizhou/Desktop/截屏2020-09-16 下午9.57.00.png)</p>
+<p>sizeof=140</p>
+</li>
+</ul>
+<p>根据规律看出每个info占28字节。</p>
+<p>因为这里的两个int占2*4=8字节 ==&gt;字符串共占20个字节。。。</p>
+<p>这正好是定义结构体的时候，char数组的下标和！</p>
+<p>![截屏2020-09-16 下午10.04.56](/Users/boxizhou/Library/Application Support/typora-user-images/截屏2020-09-16 下午10.04.56.png)</p>
+<h4 id="我的猜想：在定义结构体的时候，按照格式为每个结构体划分了空间，因为字符串结尾要有”-0”所以“name”和“sex”只能最多有9个字节。"><a href="#我的猜想：在定义结构体的时候，按照格式为每个结构体划分了空间，因为字符串结尾要有”-0”所以“name”和“sex”只能最多有9个字节。" class="headerlink" title="我的猜想：在定义结构体的时候，按照格式为每个结构体划分了空间，因为字符串结尾要有”\0”所以“name”和“sex”只能最多有9个字节。"></a>我的猜想：在定义结构体的时候，按照格式为每个结构体划分了空间，因为字符串结尾要有”\0”所以“name”和“sex”只能最多有9个字节。</h4><p>如果超过。。。</p>
+<p>![截屏2020-09-16 下午10.11.30](/Users/boxizhou/Library/Application Support/typora-user-images/截屏2020-09-16 下午10.11.30.png)</p>
+<p>10个字节之后的被自动略去（但是不知道为什么有个后面的M…）</p>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/14/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -488,7 +612,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -526,13 +650,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">0k</span>
+    <span title="站点总字数">3k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1 分钟</span>
+    <span title="站点阅读时长">2 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
