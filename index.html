@@ -172,7 +172,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-09-17 20:02:45 / 修改时间：20:41:26" itemprop="dateCreated datePublished" datetime="2020-09-17T20:02:45+08:00">2020-09-17</time>
+              <time title="创建时间：2020-09-17 20:02:45 / 修改时间：20:44:39" itemprop="dateCreated datePublished" datetime="2020-09-17T20:02:45+08:00">2020-09-17</time>
             </span>
 
           
@@ -231,26 +231,26 @@
 <li><h3 id="sizeof-struct的思考"><a href="#sizeof-struct的思考" class="headerlink" title="sizeof struct的思考"></a>sizeof struct的思考</h3><ul>
 <li>当max=2时，这时总共8个变量</li>
 </ul>
-<p><img src="%E5%BE%AE%E5%85%89C-02/1.png" alt="Lena"></p>
+<p><img src="/2020/09/17/%E5%BE%AE%E5%85%89C-02/1.png" alt="Lena"></p>
 <p>sizeof是56</p>
 <ul>
 <li>Max=3，这时总共12个变量</li>
 </ul>
-<p><img src="%E5%BE%AE%E5%85%89C-02/2.png" alt="Lena"></p>
+<p><img src="/2020/09/17/%E5%BE%AE%E5%85%89C-02/2.png" alt="Lena"></p>
 <p>sizeof=84</p>
 <ul>
 <li>Max=5，20个变量</li>
 </ul>
-<p><img src="%E5%BE%AE%E5%85%89C-02/3.png" alt="Lena"></p>
+<p><img src="/2020/09/17/%E5%BE%AE%E5%85%89C-02/3.png" alt="Lena"></p>
 <p>sizeof=140</p>
 </li>
 </ul>
 <p>根据规律看出每个info占28字节。</p>
 <p>因为这里的两个int占2*4=8字节 ==&gt;字符串共占20个字节。。。</p>
 <p>这正好是定义结构体的时候，char数组的下标和！</p>
-<p><img src="%E5%BE%AE%E5%85%89C-02/4.png" alt="Lena"></p>
+<p><img src="/2020/09/17/%E5%BE%AE%E5%85%89C-02/4.png" alt="Lena"></p>
 <h4 id="我的猜想：在定义结构体的时候，按照格式为每个结构体划分了空间，因为字符串结尾要有”-0”所以“name”和“sex”只能最多有9个字节。"><a href="#我的猜想：在定义结构体的时候，按照格式为每个结构体划分了空间，因为字符串结尾要有”-0”所以“name”和“sex”只能最多有9个字节。" class="headerlink" title="我的猜想：在定义结构体的时候，按照格式为每个结构体划分了空间，因为字符串结尾要有”\0”所以“name”和“sex”只能最多有9个字节。"></a>我的猜想：在定义结构体的时候，按照格式为每个结构体划分了空间，因为字符串结尾要有”\0”所以“name”和“sex”只能最多有9个字节。</h4><p>如果超过。。。</p>
-<p><img src="%E5%BE%AE%E5%85%89C-02/5.png" alt="Lena"><br>10个字节之后的被自动略去（但是不知道为什么有个后面的M…）</p>
+<p><img src="/2020/09/17/%E5%BE%AE%E5%85%89C-02/5.png" alt="Lena"><br>10个字节之后的被自动略去（但是不知道为什么有个后面的M…）</p>
 <h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>
       
     </div>
